@@ -102,14 +102,22 @@
       font-size: 0.95rem;
     }
 
-    .Resume1 {
-      background: #e1ecf4;
-      color: #0366d6;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
+   .Resume1 {
+  display: inline-block;          /* macht den Rahmen so groß wie der Text */
+  background: #e1ecf4;
+  color: #0366d6;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;          /* entfernt Unterstreichung */
+  margin-top: 10px;
+}
+
+.Resume1:hover {
+  background: #d0e5f8;            /* schöner Hover-Effekt */
+}
+
 
     /* ==== Contact ==== */
     .contact a {
@@ -158,6 +166,7 @@
       </p>
        <div class="Resume1">
           <a href="https://github.com/Projekts-of-Sun/Resume" target="_blank">📄 View My Resume</a>
+
 
       </div>
     </section>
