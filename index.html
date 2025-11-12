@@ -6,39 +6,104 @@
   <title>Omid Alimohammad | Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background: #f8f9fa;
-    }
-    h1 {
-      color: #007acc;
-    }
-    p {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
       color: #333;
     }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
+
+    header {
       background: #007acc;
       color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #007acc;
+      border-bottom: 2px solid #007acc;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .projects a {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
       transition: background 0.3s;
     }
-    a:hover {
+
+    .projects a:hover {
       background: #005f99;
+    }
+
+    footer {
+      background: #007acc;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <h1>👋 Hi, I'm Omid Alimohammad</h1>
-  <p>Electrical Engineer | C++ Developer | Automation & Embedded Systems Enthusiast</p>
-  <p>Welcome to my portfolio!</p>
+  <header>
+    <h1>👋 Hi, I'm Omid Alimohammad</h1>
+    <p>Electrical Engineer | C++ Developer | Automation & Embedded Systems Enthusiast</p>
+  </header>
 
-  <a href="https://github.com/projekts-of-sun/Automation" target="_blank">
-    Automation Middleware (C++)
-  </a>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm an Electrical Engineer focused on process automation, system integration,
+        and embedded software development. I enjoy combining hardware and software
+        to build intelligent and efficient engineering solutions.
+      </p>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <a href="https://github.com/omidalimohammad/Automation-Middleware" target="_blank">
+        Automation Middleware (C++)
+      </a>
+      <a href="https://github.com/omidalimohammad/GCMS-Integration" target="_blank">
+        GC/MS Integration Project
+      </a>
+      <a href="https://github.com/omidalimohammad/E3Series-Designs" target="_blank">
+        Electrical Design using E3.Series
+      </a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:omidalimohammad86@gmail.com">omidalimohammad86@gmail.com</a></p>
+      <p><a href="https://www.linkedin.com/in/omidalimohammad" target="_blank">LinkedIn</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Omid Alimohammad | Built with ❤️ and HTML</p>
+  </footer>
 </body>
 </html>
