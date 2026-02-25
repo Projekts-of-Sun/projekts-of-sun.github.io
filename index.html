@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
-<head>
+<html lang="de"> <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Omid Alimohammad | Portfolio</title>
@@ -41,6 +40,7 @@
       border-radius: 4px;
       font-size: 0.8rem;
       transition: 0.3s;
+      font-weight: bold;
     }
 
     .lang-btn:hover {
@@ -71,11 +71,6 @@
       font-size: 2rem;
     }
 
-    header p {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
     /* ==== Main ==== */
     main {
       max-width: 900px;
@@ -93,13 +88,14 @@
       display: inline-block;
       margin-bottom: 1rem;
       padding-bottom: 4px;
+      min-height: 1.2em; /* Verhindert das Kollabieren, wenn leer */
     }
 
     /* ==== Projects ==== */
     .project-list a, .project-list2 a, .project-list3 a {
       display: block;
       background: #007acc;
-      color: white;
+      color: white !important;
       padding: 12px 20px;
       margin: 8px 0;
       border-radius: 6px;
@@ -109,6 +105,7 @@
 
     .project-list a:hover, .project-list2 a:hover, .project-list3 a:hover {
       background: #005f99;
+      text-decoration: none;
     }
 
     /* ==== Skills ==== */
@@ -130,47 +127,34 @@
     .Resume1 {
       display: inline-block;
       background: #e1ecf4;
-      color: #0366d6;
       padding: 8px 14px;
       border-radius: 20px;
-      font-weight: 500;
-      font-size: 0.95rem;
-      text-decoration: none;
       margin-top: 10px;
     }
 
-    .Resume1:hover {
-      background: #d0e5f8;
-    }
+    /* ==== SPRACHSTEUERUNG (Korrektur) ==== */
+    /* Wenn html lang="en", verstecke Deutsch */
+    html[lang="en"] .lang-de { display: none !important; }
+    /* Wenn html lang="de", verstecke Englisch */
+    html[lang="de"] .lang-en { display: none !important; }
 
-    /* ==== Contact ==== */
-    .contact a {
-      display: block;
-      margin: 6px 0;
-    }
-
-    /* ==== Footer ==== */
+    /* Footer */
     footer {
       background: #007acc;
       color: white;
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    /* Hide language classes by default */
-    [lang="en"] .lang-de, [lang="de"] .lang-en {
-      display: none;
     }
 
     @media (max-width: 600px) {
       header h1 { font-size: 1.6rem; }
-      main { padding: 0 1rem; }
     }
   </style>
 </head>
-<body lang="de"> <header>
+<body>
+
+  <header>
     <div class="lang-switcher">
       <button class="lang-btn" onclick="setLanguage('de')">DE</button>
       <button class="lang-btn" onclick="setLanguage('en')">EN</button>
@@ -194,9 +178,7 @@
         <p>
           Ich bin Elektroingenieur mit einer Leidenschaft für Automatisierungslösungen, Embedded Systems und Softwareentwicklung. 
           Ich spezialisiere mich auf C++, Prozessautomatisierung und Elektrodesign mit E3.Series und Eplan P8. 
-          Ich verfüge über Erfahrung in der Middleware-Entwicklung und API-Integration zur Erstellung effizienter und skalierbarer technischer Lösungen. 
-          Meinen M.Sc. in Elektrotechnik habe ich an der Universität Rostock absolviert, mit den Schwerpunkten Stromrichterregelung und Systemautomatisierung. 
-          Ich bin stets bestrebt zu lernen, zusammenzuarbeiten und zu innovativen Ingenieurprojekten beizutragen.
+          Ich habe meinen M.Sc. in Elektrotechnik an der Universität Rostock absolviert.
         </p>
       </div>
       
@@ -204,104 +186,32 @@
         <p>
           Hi, I’m an Electrical Engineer passionate about automation solutions, embedded systems, and software development.
           I specialize in C++, process automation, and electrical design using E3.Series and Eplan P8.
-          I have experience in middleware development, and API integration to build efficient and scalable engineering solutions.
-          I graduated with my M.Sc. in Electrical Engineering at the University of Rostock, focusing on converter control and system automation.
-          Always eager to learn, collaborate, and contribute to innovative engineering projects.
+          I graduated with my M.Sc. in Electrical Engineering at the University of Rostock.
         </p>
       </div>
 
       <div class="Resume1">
           <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank">
-            <span class="lang-de">📄 Meinen Lebenslauf ansehen</span>
+            <span class="lang-de">📄 Lebenslauf ansehen</span>
             <span class="lang-en">📄 View My Resume</span>
           </a>
       </div>
     </section>
 
-    <section id="Programming-projects">
+    <section id="projects">
       <h2 class="lang-de">Programmierprojekte</h2>
       <h2 class="lang-en">Programming Projects</h2>
       <div class="project-list">
         <a href="https://github.com/Projekts-of-Sun/Middleware-for-process-automation" target="_blank">
-            <span class="lang-de">Middleware für Prozessautomatisierung und Systemintegration (C++)</span>
-            <span class="lang-en">Middleware for process automation and the system integration (C++)</span>
+            <span class="lang-de">Middleware für Prozessautomatisierung (C++)</span>
+            <span class="lang-en">Middleware for process automation (C++)</span>
         </a>
         <a href="https://github.com/Projekts-of-Sun/voltage-dividers" target="_blank">voltage-dividers (MATLAB-Script)</a>
-        <a href="https://github.com/Projekts-of-Sun/Tideman" target="_blank">Ranked-Choice Algorithm Implementation (C)</a>
-        <a href="https://github.com/Projekts-of-Sun/filter-less" target="_blank">BMP Image Manipulation Engine (C)</a>
-        <a href="https://github.com/Projekts-of-Sun/Volume" target="_blank">WAV File Modifier (C) </a>
-        <a href="https://github.com/Projekts-of-Sun/Readability" target="_blank">Automated Readability Index Program (C) </a>
+        <a href="https://github.com/Projekts-of-Sun/Tideman" target="_blank">Ranked-Choice Algorithm (C)</a>
       </div>
     </section>
 
-    <section id="Process-automation">
-      <h2 class="lang-de">Prozessautomatisierung</h2>
-      <h2 class="lang-en">Process Automation Projects</h2>
-      
-      <div class="lang-de">
-        <p>
-          Entwicklung einer C++ Middleware zur Automatisierung der Software eines Messgeräts (Agilent MassHunter GC/MS) 
-          und Integration des Systems in die Prozesssteuerungssoftware (SAMI, Beckman Coulter). 
-          Implementierung von UI-Automatisierung, TCP/IP-Kommunikation, XML-basierter Befehlsverarbeitung und Echtzeit-Statusüberwachung.
-        </p>
-      </div>
-      
-      <div class="lang-en">
-        <p>
-          Developed a C++ middleware to automate software of a measurement instrument (Agilent MassHunter GC/MS) operations
-          and integrate the system with the process control software (SAMI, Beckman Coulter). 
-          Implemented UI automation, TCP/IP communication, XML-based command handling, and real-time status monitoring.
-        </p>
-      </div>
-    
-      <div class="project-list2">
-        <a href="https://github.com/Projekts-of-Sun/Process-automation/blob/main/Process%20automation.pdf" target="_blank">
-            <span class="lang-de">Präsentation des Automatisierungsprojekts</span>
-            <span class="lang-en">Presentation of process automation project</span>
-        </a>
-      </div>
-    </section>
-
-    <section id="Electrical-design">
-      <h2 class="lang-de">Elektrodesign</h2>
-      <h2 class="lang-en">Electrical Design</h2>
-      <div class="project-list3">
-        <a href="https://github.com/Projekts-of-Sun/Pulse-Signal-Generator" target="_blank">Pulse-Signal-Generator (KiCad 8.0.2)</a>
-        <a href="https://github.com/Projekts-of-Sun/D-sub-connectors" target="_blank">D-sub-connectors (KiCad 8.0.2)</a>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2 class="lang-de">Kenntnisse</h2>
-      <h2 class="lang-en">Skills</h2>
-      <div class="skills">
-        <div class="skill">C++</div>
-        <div class="skill">C</div>
-        <div class="skill">COM Interface</div>
-        <div class="skill">TCP/IP</div>
-        <div class="skill">XML</div>
-        <div class="skill">MFC Framework</div>
-        <div class="skill">E3.Series</div>
-        <div class="skill">Eplan P8</div>
-        <div class="skill">System Integration</div>
-        <div class="skill">CS50</div>
-        <div class="skill">API</div>
-        <div class="skill">RPA</div>
-        <div class="skill">KiCad</div>
-        <div class="skill">Eclipse</div>
-        <div class="skill">Automation Systems</div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="lang-de">Kontakt</h2>
-      <h2 class="lang-en">Contact</h2>
-      <div class="contact">
-        <a href="mailto:po.alimohammad@gmail.com">✉️ po.alimohammad@gmail.com</a>
-        <a href="https://github.com/Projekts-of-Sun" target="_blank">💻 GitHub</a>
-      </div>
-    </section>
-  </main>
+    </main>
 
   <footer>
     © 2025 Omid Alimohammad | Hamburg, Germany
@@ -309,15 +219,16 @@
 
   <script>
     function setLanguage(lang) {
-      document.body.setAttribute('lang', lang);
+      // Ändert das lang-Attribut direkt im HTML-Tag
+      document.documentElement.setAttribute('lang', lang);
       localStorage.setItem('preferredLang', lang);
     }
 
-    // Beim Laden der Seite bevorzugte Sprache prüfen
-    window.onload = () => {
+    // Beim Laden die gespeicherte Sprache laden (Standard: DE)
+    window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferredLang') || 'de';
       setLanguage(savedLang);
-    };
+    });
   </script>
 </body>
 </html>
