@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,12 +24,37 @@
       text-decoration: underline;
     }
 
+    /* ==== Language Switcher ==== */
+    .lang-switcher {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+
+    .lang-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid white;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      transition: 0.3s;
+    }
+
+    .lang-btn:hover {
+      background: white;
+      color: #007acc;
+    }
+
     /* ==== Header ==== */
     header {
       background: linear-gradient(135deg, #007acc, #005f99);
       color: white;
       text-align: center;
       padding: 3rem 1rem;
+      position: relative;
     }
 
     header img {
@@ -71,7 +96,7 @@
     }
 
     /* ==== Projects ==== */
-    .project-list a {
+    .project-list a, .project-list2 a, .project-list3 a {
       display: block;
       background: #007acc;
       color: white;
@@ -82,23 +107,7 @@
       transition: background 0.3s;
     }
 
-    .project-list a:hover {
-      background: #005f99;
-    }
-
-     /* ==== Process automation projects ==== */
-    .project-list2 a {
-      display: block;
-      background: #007acc;
-      color: white;
-      padding: 12px 20px;
-      margin: 8px 0;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-
-    .project-list2 a:hover {
+    .project-list a:hover, .project-list2 a:hover, .project-list3 a:hover {
       background: #005f99;
     }
 
@@ -108,21 +117,7 @@
       flex-wrap: wrap;
       gap: 10px;
     }
- /* ==== Electrical design ==== */
-    .project-list3 a {
-      display: block;
-      background: #007acc;
-      color: white;
-      padding: 12px 20px;
-      margin: 8px 0;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
 
-    .project-list3 a:hover {
-      background: #005f99;
-    }
     .skill {
       background: #e1ecf4;
       color: #0366d6;
@@ -132,22 +127,21 @@
       font-size: 0.95rem;
     }
 
-   .Resume1 {
-  display: inline-block;          /* macht den Rahmen so groß wie der Text */
-  background: #e1ecf4;
-  color: #0366d6;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  text-decoration: none;          /* entfernt Unterstreichung */
-  margin-top: 10px;
-}
+    .Resume1 {
+      display: inline-block;
+      background: #e1ecf4;
+      color: #0366d6;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      margin-top: 10px;
+    }
 
-.Resume1:hover {
-  background: #d0e5f8;            /* schöner Hover-Effekt */
-}
-
+    .Resume1:hover {
+      background: #d0e5f8;
+    }
 
     /* ==== Contact ==== */
     .contact a {
@@ -165,87 +159,121 @@
       font-size: 0.9rem;
     }
 
+    /* Hide language classes by default */
+    [lang="en"] .lang-de, [lang="de"] .lang-en {
+      display: none;
+    }
+
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      main {
-        padding: 0 1rem;
-      }
+      header h1 { font-size: 1.6rem; }
+      main { padding: 0 1rem; }
     }
   </style>
 </head>
-<body>
-  <header>
-    <!-- Du kannst dein echtes Profilbild hier einfügen -->
+<body lang="de"> <header>
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+      <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+    </div>
+    
     <img src="Sun.png" alt="Omid Alimohammad" />
-    <h1>👋 Hi, I'm Omid Alimohammad</h1>
-    <p>Electrical Engineer | Software Developer | Automation & Embedded Systems Enthusiast</p>
+    
+    <h1 class="lang-de">👋 Hallo, ich bin Omid Alimohammad</h1>
+    <h1 class="lang-en">👋 Hi, I'm Omid Alimohammad</h1>
+    
+    <p class="lang-de">Elektroingenieur | Softwareentwickler | Enthusiast für Automatisierung & Embedded Systems</p>
+    <p class="lang-en">Electrical Engineer | Software Developer | Automation & Embedded Systems Enthusiast</p>
   </header>
 
   <main>
     <section id="about">
-      <h2>About Me</h2>
-      <p>
-        Hi, I’m an Electrical Engineer passionate about automation solutions, embedded systems, and software development.
-        I specialize in C++, process automation, and electrical design using E3.Series and Eplan P8.
-        I have experience in middleware development, and API integration to build efficient and scalable engineering solutions.
-        I graduated with my M.Sc. in Electrical Engineering at the University of Rostock, focusing on converter control and system automation.
-        Always eager to learn, collaborate, and contribute to innovative engineering projects.
+      <h2 class="lang-de">Über mich</h2>
+      <h2 class="lang-en">About Me</h2>
+      
+      <div class="lang-de">
+        <p>
+          Ich bin Elektroingenieur mit einer Leidenschaft für Automatisierungslösungen, Embedded Systems und Softwareentwicklung. 
+          Ich spezialisiere mich auf C++, Prozessautomatisierung und Elektrodesign mit E3.Series und Eplan P8. 
+          Ich verfüge über Erfahrung in der Middleware-Entwicklung und API-Integration zur Erstellung effizienter und skalierbarer technischer Lösungen. 
+          Meinen M.Sc. in Elektrotechnik habe ich an der Universität Rostock absolviert, mit den Schwerpunkten Stromrichterregelung und Systemautomatisierung. 
+          Ich bin stets bestrebt zu lernen, zusammenzuarbeiten und zu innovativen Ingenieurprojekten beizutragen.
+        </p>
+      </div>
+      
+      <div class="lang-en">
+        <p>
+          Hi, I’m an Electrical Engineer passionate about automation solutions, embedded systems, and software development.
+          I specialize in C++, process automation, and electrical design using E3.Series and Eplan P8.
+          I have experience in middleware development, and API integration to build efficient and scalable engineering solutions.
+          I graduated with my M.Sc. in Electrical Engineering at the University of Rostock, focusing on converter control and system automation.
+          Always eager to learn, collaborate, and contribute to innovative engineering projects.
+        </p>
+      </div>
 
-      </p>
-       <div class="Resume1">
-          <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf">📄 View My Resume</a>
-
-
+      <div class="Resume1">
+          <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank">
+            <span class="lang-de">📄 Meinen Lebenslauf ansehen</span>
+            <span class="lang-en">📄 View My Resume</span>
+          </a>
       </div>
     </section>
 
-
-    <section id="Programming projects">
-      <h2>Programing projects</h2>
+    <section id="Programming-projects">
+      <h2 class="lang-de">Programmierprojekte</h2>
+      <h2 class="lang-en">Programming Projects</h2>
       <div class="project-list">
-        <a href="https://github.com/Projekts-of-Sun/Middleware-for-process-automation" target="_blank">Middleware for process automation and the system integration (C++)</a>
+        <a href="https://github.com/Projekts-of-Sun/Middleware-for-process-automation" target="_blank">
+            <span class="lang-de">Middleware für Prozessautomatisierung und Systemintegration (C++)</span>
+            <span class="lang-en">Middleware for process automation and the system integration (C++)</span>
+        </a>
         <a href="https://github.com/Projekts-of-Sun/voltage-dividers" target="_blank">voltage-dividers (MATLAB-Script)</a>
         <a href="https://github.com/Projekts-of-Sun/Tideman" target="_blank">Ranked-Choice Algorithm Implementation (C)</a>
         <a href="https://github.com/Projekts-of-Sun/filter-less" target="_blank">BMP Image Manipulation Engine (C)</a>
         <a href="https://github.com/Projekts-of-Sun/Volume" target="_blank">WAV File Modifier (C) </a>
         <a href="https://github.com/Projekts-of-Sun/Readability" target="_blank">Automated Readability Index Program (C) </a>
-                                                                                       
       </div>
     </section>
 
-      <section id="Programming projects">
-      <h2>Process automation projects</h2>
-         <p>
-       Developed a C++ middleware to automate software of a measurement instrument (Agilent MassHunter GC/MS) operations
-       and integrate the system with the  process control software (SAMI, Beckman Coulter). 
-       Implemented UI automation, TCP/IP communication, XML-based command handling, and real-time status monitoring to
-       enable fully automated measurements, method selection, error reporting, and data-path management. 
-       The codes of this program uploaded in this page in the part of programming projects.
-           
-              </p>
+    <section id="Process-automation">
+      <h2 class="lang-de">Prozessautomatisierung</h2>
+      <h2 class="lang-en">Process Automation Projects</h2>
+      
+      <div class="lang-de">
+        <p>
+          Entwicklung einer C++ Middleware zur Automatisierung der Software eines Messgeräts (Agilent MassHunter GC/MS) 
+          und Integration des Systems in die Prozesssteuerungssoftware (SAMI, Beckman Coulter). 
+          Implementierung von UI-Automatisierung, TCP/IP-Kommunikation, XML-basierter Befehlsverarbeitung und Echtzeit-Statusüberwachung.
+        </p>
+      </div>
+      
+      <div class="lang-en">
+        <p>
+          Developed a C++ middleware to automate software of a measurement instrument (Agilent MassHunter GC/MS) operations
+          and integrate the system with the process control software (SAMI, Beckman Coulter). 
+          Implemented UI automation, TCP/IP communication, XML-based command handling, and real-time status monitoring.
+        </p>
+      </div>
     
-   
       <div class="project-list2">
-        <a href="https://github.com/Projekts-of-Sun/Process-automation/blob/main/Process%20automation.pdf" target="_blank">Presentation of process automation project </a>
-
-             </div>
+        <a href="https://github.com/Projekts-of-Sun/Process-automation/blob/main/Process%20automation.pdf" target="_blank">
+            <span class="lang-de">Präsentation des Automatisierungsprojekts</span>
+            <span class="lang-en">Presentation of process automation project</span>
+        </a>
+      </div>
     </section>
 
-     <section id="Electrical design">
-      <h2>Electrical design</h2>
+    <section id="Electrical-design">
+      <h2 class="lang-de">Elektrodesign</h2>
+      <h2 class="lang-en">Electrical Design</h2>
       <div class="project-list3">
-        
         <a href="https://github.com/Projekts-of-Sun/Pulse-Signal-Generator" target="_blank">Pulse-Signal-Generator (KiCad 8.0.2)</a>
         <a href="https://github.com/Projekts-of-Sun/D-sub-connectors" target="_blank">D-sub-connectors (KiCad 8.0.2)</a>
-
-
       </div>
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
+      <h2 class="lang-de">Kenntnisse</h2>
+      <h2 class="lang-en">Skills</h2>
       <div class="skills">
         <div class="skill">C++</div>
         <div class="skill">C</div>
@@ -266,7 +294,8 @@
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2 class="lang-de">Kontakt</h2>
+      <h2 class="lang-en">Contact</h2>
       <div class="contact">
         <a href="mailto:po.alimohammad@gmail.com">✉️ po.alimohammad@gmail.com</a>
         <a href="https://github.com/Projekts-of-Sun" target="_blank">💻 GitHub</a>
@@ -277,5 +306,18 @@
   <footer>
     © 2025 Omid Alimohammad | Hamburg, Germany
   </footer>
+
+  <script>
+    function setLanguage(lang) {
+      document.body.setAttribute('lang', lang);
+      localStorage.setItem('preferredLang', lang);
+    }
+
+    // Beim Laden der Seite bevorzugte Sprache prüfen
+    window.onload = () => {
+      const savedLang = localStorage.getItem('preferredLang') || 'de';
+      setLanguage(savedLang);
+    };
+  </script>
 </body>
 </html>
