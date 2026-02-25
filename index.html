@@ -24,33 +24,39 @@
       text-decoration: underline;
     }
 
-    /* ==== Language Switcher ==== */
-    .language-switcher {
-      position: fixed;
+    /* ==== Language Switcher (Optimiert für Sichtbarkeit) ==== */
+    .lang-switcher {
+      position: absolute;
       top: 20px;
       right: 20px;
       z-index: 1000;
-      display: flex;
-      gap: 10px;
     }
 
     .lang-btn {
-      background: #007acc;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
+      background: #ffffff; /* Weißer Hintergrund für hohen Kontrast */
+      border: 2px solid #ffffff;
+      color: #007acc;      /* Blaue Schrift */
+      padding: 8px 18px;
       cursor: pointer;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-
-    .lang-btn.active {
-      background: #005f99;
+      border-radius: 25px; /* Abgerundete Ecken */
+      font-size: 0.9rem;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Schatten für bessere Sichtbarkeit */
+      margin-left: 5px;
     }
 
     .lang-btn:hover {
-      background: #005f99;
+      background: #e1ecf4;
+      color: #005f99;
+      transform: translateY(-1px);
+    }
+
+    /* Markierung für die aktive Sprache */
+    html[lang="de"] .btn-de,
+    html[lang="en"] .btn-en {
+      background: #e1ecf4;
+      border-color: #007acc;
     }
 
     /* ==== Header ==== */
@@ -58,7 +64,8 @@
       background: linear-gradient(135deg, #007acc, #005f99);
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 3.5rem 1rem;
+      position: relative;
     }
 
     header img {
@@ -72,15 +79,17 @@
 
     header h1 {
       margin: 0.5rem 0 0;
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     header p {
-      font-size: 1rem;
+      font-size: 1.1rem;
       opacity: 0.9;
+      max-width: 800px;
+      margin: 0.5rem auto;
     }
 
-    /* ==== Main ==== */
+    /* ==== Main Layout ==== */
     main {
       max-width: 900px;
       margin: 2rem auto;
@@ -88,283 +97,222 @@
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
 
     h2 {
       color: #007acc;
       border-bottom: 2px solid #007acc;
       display: inline-block;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       padding-bottom: 4px;
     }
 
-    /* ==== Projects ==== */
-    .project-list a {
+    /* ==== Projekt-Kacheln (Buttons) ==== */
+    .project-list a, .project-list2 a, .project-list3 a {
       display: block;
       background: #007acc;
-      color: white;
-      padding: 12px 20px;
-      margin: 8px 0;
-      border-radius: 6px;
+      color: white !important;
+      padding: 15px 20px;
+      margin: 12px 0;
+      border-radius: 8px;
       font-weight: 500;
-      transition: background 0.3s;
+      transition: 0.3s;
+      text-decoration: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .project-list a:hover {
+    .project-list a:hover, .project-list2 a:hover, .project-list3 a:hover {
       background: #005f99;
-    }
-
-    /* ==== Process automation projects ==== */
-    .project-list2 a {
-      display: block;
-      background: #007acc;
-      color: white;
-      padding: 12px 20px;
-      margin: 8px 0;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-
-    .project-list2 a:hover {
-      background: #005f99;
+      transform: translateX(5px);
     }
 
     /* ==== Skills ==== */
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    /* ==== Electrical design ==== */
-    .project-list3 a {
-      display: block;
-      background: #007acc;
-      color: white;
-      padding: 12px 20px;
-      margin: 8px 0;
-      border-radius: 6px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-
-    .project-list3 a:hover {
-      background: #005f99;
+      gap: 12px;
     }
 
     .skill {
       background: #e1ecf4;
       color: #0366d6;
-      padding: 8px 14px;
+      padding: 8px 16px;
       border-radius: 20px;
       font-weight: 500;
       font-size: 0.95rem;
     }
 
-    .Resume1 {
+    .Resume-Container {
+      margin-top: 20px;
+    }
+
+    .Resume-Link {
       display: inline-block;
       background: #e1ecf4;
       color: #0366d6;
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: 500;
-      font-size: 0.95rem;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
       text-decoration: none;
-      margin-top: 10px;
+      transition: 0.3s;
     }
 
-    .Resume1:hover {
+    .Resume-Link:hover {
       background: #d0e5f8;
+      text-decoration: none;
     }
 
-    /* ==== Contact ==== */
-    .contact a {
-      display: block;
-      margin: 6px 0;
-    }
+    /* ==== Sprach-Logik CSS ==== */
+    /* Verstecke englische Texte, wenn Deutsch aktiv ist */
+    html[lang="de"] .lang-en { display: none !important; }
+    /* Verstecke deutsche Texte, wenn Englisch aktiv ist */
+    html[lang="en"] .lang-de { display: none !important; }
 
-    /* ==== Footer ==== */
+    /* Footer */
     footer {
       background: #007acc;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-
-    .hidden {
-      display: none;
+      padding: 2rem;
+      margin-top: 4rem;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      main {
-        padding: 0 1rem;
-      }
-      .language-switcher {
-        top: 10px;
-        right: 10px;
-        gap: 5px;
-      }
-
-      .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-      }
+      header h1 { font-size: 1.8rem; }
+      .lang-switcher { top: 10px; right: 10px; }
+      .lang-btn { padding: 6px 12px; font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Language Switcher -->
-  <div class="language-switcher">
-    <button class="lang-btn active" onclick="switchLanguage('de')">Deutsch</button>
-    <button class="lang-btn" onclick="switchLanguage('en')">English</button>
-  </div>
 
   <header>
+    <div class="lang-switcher">
+      <button class="lang-btn btn-de" onclick="setLanguage('de')">Deutsch</button>
+      <button class="lang-btn btn-en" onclick="setLanguage('en')">English</button>
+    </div>
+    
     <img src="Sun.png" alt="Omid Alimohammad" />
-    <h1 data-de="👋 Hallo, ich bin Omid Alimohammad" data-en="👋 Hi, I'm Omid Alimohammad">
-      👋 Hallo, ich bin Omid Alimohammad
-    </h1>
-    <p data-de="Elektroingenieur | Softwareentwickler | Automatisierungs- & Embedded-Systems-Enthusiast" 
-       data-en="Electrical Engineer | Software Developer | Automation & Embedded Systems Enthusiast">
-      Elektroingenieur | Softwareentwickler | Automatisierungs- & Embedded-Systems-Enthusiast
-    </p>
+    
+    <h1 class="lang-de">👋 Hallo, ich bin Omid Alimohammad</h1>
+    <h1 class="lang-en">👋 Hi, I'm Omid Alimohammad</h1>
+    
+    <p class="lang-de">Elektroingenieur | Softwareentwickler | Enthusiast für Automatisierung & Embedded Systems</p>
+    <p class="lang-en">Electrical Engineer | Software Developer | Automation & Embedded Systems Enthusiast</p>
   </header>
 
   <main>
-    <!-- About Section -->
     <section id="about">
-      <h2 data-de="Über mich" data-en="About Me">Über mich</h2>
-      <p data-de="Ich bin ein Elektroingenieur mit Leidenschaft für Automatisierungslösungen, eingebettete Systeme und Softwareentwicklung. 
-        Ich spezialisiere mich auf C++, Prozessautomatisierung und elektrisches Design mit E3.Series und Eplan P8. 
-        Ich habe Erfahrung in der Middleware-Entwicklung und API-Integration, um effiziente und skalierbare Ingenieurlösungen zu entwickeln. 
-        Ich habe meinen M.Sc. in Elektrotechnik an der Universität Rostock absolviert und mich dabei auf Wandlerkontrolle und Systemautomatisierung konzentriert. 
-        Ich bin immer bereit zu lernen, zusammenzuarbeiten und an innovativen Ingenieurprojekten beizutragen."
-         data-en="Hi, I'm an Electrical Engineer passionate about automation solutions, embedded systems, and software development. 
-        I specialize in C++, process automation, and electrical design using E3.Series and Eplan P8. 
-        I have experience in middleware development, and API integration to build efficient and scalable engineering solutions. 
-        I graduated with my M.Sc. in Electrical Engineering at the University of Rostock, focusing on converter control and system automation. 
-        Always eager to learn, collaborate, and contribute to innovative engineering projects.">
-        Ich bin ein Elektroingenieur mit Leidenschaft für Automatisierungslösungen, eingebettete Systeme und Softwareentwicklung. 
-        Ich spezialisiere mich auf C++, Prozessautomatisierung und elektrisches Design mit E3.Series und Eplan P8. 
-        Ich habe Erfahrung in der Middleware-Entwicklung und API-Integration, um effiziente und skalierbare Ingenieurlösungen zu entwickeln. 
-        Ich habe meinen M.Sc. in Elektrotechnik an der Universität Rostock absolviert und mich dabei auf Wandlerkontrolle und Systemautomatisierung konzentriert. 
-        Ich bin immer bereit zu lernen, zusammenzuarbeiten und an innovativen Ingenieurprojekten beizutragen.
-      </p>
-      <div class="Resume1">
-        <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" data-de="📄 Mein Lebenslauf" data-en="📄 View My Resume">
-          📄 Mein Lebenslauf
-        </a>
+      <h2 class="lang-de">Über mich</h2>
+      <h2 class="lang-en">About Me</h2>
+      
+      <div class="lang-de">
+        <p>
+          Ich bin Elektroingenieur mit einer Leidenschaft für Automatisierungslösungen, Embedded Systems und Softwareentwicklung. 
+          Ich spezialisiere mich auf C++, Prozessautomatisierung und Elektrodesign mit E3.Series und Eplan P8. 
+          Ich verfüge über Erfahrung in der Middleware-Entwicklung und API-Integration zur Erstellung effizienter technischer Lösungen. 
+          Meinen M.Sc. in Elektrotechnik habe ich an der Universität Rostock absolviert.
+        </p>
+      </div>
+      
+      <div class="lang-en">
+        <p>
+          Hi, I’m an Electrical Engineer passionate about automation solutions, embedded systems, and software development.
+          I specialize in C++, process automation, and electrical design using E3.Series and Eplan P8.
+          I have experience in middleware development and API integration to build efficient engineering solutions.
+          I graduated with my M.Sc. in Electrical Engineering at the University of Rostock.
+        </p>
+      </div>
+
+      <div class="Resume-Container">
+          <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link">
+            <span class="lang-de">📄 Lebenslauf ansehen</span>
+            <span class="lang-en">📄 View My Resume</span>
+          </a>
       </div>
     </section>
 
-    <!-- Programming Projects Section -->
-    <section id="programming">
-      <h2 data-de="Programmierprojekte" data-en="Programming Projects">Programmierprojekte</h2>
+    <section id="programming-projects">
+      <h2 class="lang-de">Programmierprojekte</h2>
+      <h2 class="lang-en">Programming Projects</h2>
       <div class="project-list">
-        <a href="https://github.com/Projekts-of-Sun/Middleware-for-process-automation" target="_blank" 
-           data-de="Middleware für Prozessautomatisierung und Systemintegration (C++)" 
-           data-en="Middleware for process automation and the system integration (C++)">
-          Middleware für Prozessautomatisierung und Systemintegration (C++)
+        <a href="https://github.com/Projekts-of-Sun/Middleware-for-process-automation" target="_blank">
+          <span class="lang-de">Middleware für Prozessautomatisierung und Systemintegration (C++)</span>
+          <span class="lang-en">Middleware for process automation and system integration (C++)</span>
         </a>
-        <a href="https://github.com/Projekts-of-Sun/voltage-dividers" target="_blank" 
-           data-de="Spannungsteiler (MATLAB-Script)" 
-           data-en="voltage-dividers (MATLAB-Script)">
-          Spannungsteiler (MATLAB-Script)
+        <a href="https://github.com/Projekts-of-Sun/voltage-dividers" target="_blank">voltage-dividers (MATLAB-Script)</a>
+        <a href="https://github.com/Projekts-of-Sun/Tideman" target="_blank">
+          <span class="lang-de">Implementierung des Tideman-Algorithmus (C)</span>
+          <span class="lang-en">Ranked-Choice Algorithm Implementation (C)</span>
         </a>
-        <a href="https://github.com/Projekts-of-Sun/Tideman" target="_blank" 
-           data-de="Ranglisten-Wahl-Algorithmus (C)" 
-           data-en="Ranked-Choice Algorithm Implementation (C)">
-          Ranglisten-Wahl-Algorithmus (C)
+        <a href="https://github.com/Projekts-of-Sun/filter-less" target="_blank">
+          <span class="lang-de">BMP Bildbearbeitungs-Engine (C)</span>
+          <span class="lang-en">BMP Image Manipulation Engine (C)</span>
         </a>
-        <a href="https://github.com/Projekts-of-Sun/filter-less" target="_blank" 
-           data-de="BMP-Bildbearbeitungs-Engine (C)" 
-           data-en="BMP Image Manipulation Engine (C)">
-          BMP-Bildbearbeitungs-Engine (C)
+        <a href="https://github.com/Projekts-of-Sun/Volume" target="_blank">
+          <span class="lang-de">WAV Datei Modifikator (C)</span>
+          <span class="lang-en">WAV File Modifier (C)</span>
         </a>
-        <a href="https://github.com/Projekts-of-Sun/Volume" target="_blank" 
-           data-de="WAV-Dateien-Modifier (C)" 
-           data-en="WAV File Modifier (C)">
-          WAV-Dateien-Modifier (C)
-        </a>
-        <a href="https://github.com/Projekts-of-Sun/Readability" target="_blank" 
-           data-de="Automatisiertes Lesbarkeits-Index-Programm (C)" 
-           data-en="Automated Readability Index Program (C)">
-          Automatisiertes Lesbarkeits-Index-Programm (C)
+        <a href="https://github.com/Projekts-of-Sun/Readability" target="_blank">
+          <span class="lang-de">Automatisierter Lesbarkeits-Index (C)</span>
+          <span class="lang-en">Automated Readability Index Program (C)</span>
         </a>
       </div>
     </section>
 
-    <!-- Process Automation Section -->
-    <section id="automation">
-      <h2 data-de="Prozessautomatisierungsprojekte" data-en="Process Automation Projects">Prozessautomatisierungsprojekte</h2>
-      <p data-de="Entwickelt eine C++-Middleware zur Automatisierung der Software eines Messinstruments (Agilent MassHunter GC/MS) und Integration des Systems mit der Prozesssteuerungssoftware (SAMI, Beckman Coulter). 
-        Implementiert UI-Automatisierung, TCP/IP-Kommunikation, XML-basierte Befehlsbearbeitung und Echtzeitüberwachung, um vollautomatische Messungen, Methodenauswahl, Fehlerbehandlung und Datenverwaltung zu ermöglichen. 
-        Der Code dieses Programms wurde auf dieser Seite im Bereich Programmierprojekte hochgeladen."
-         data-en="Developed a C++ middleware to automate software of a measurement instrument (Agilent MassHunter GC/MS) operations and integrate the system with the  process control software (SAMI, Beckman Coulter). 
-        Implemented UI automation, TCP/IP communication, XML-based command handling, and real-time status monitoring to enable fully automated measurements, method selection, error reporting, and data-path management. 
-        The codes of this program uploaded in this page in the part of programming projects.">
-        Entwickelt eine C++-Middleware zur Automatisierung der Software eines Messinstruments (Agilent MassHunter GC/MS) und Integration des Systems mit der Prozesssteuerungssoftware (SAMI, Beckman Coulter). 
-        Implementiert UI-Automatisierung, TCP/IP-Kommunikation, XML-basierte Befehlsbearbeitung und Echtzeitüberwachung, um vollautomatische Messungen, Methodenauswahl, Fehlerbehandlung und Datenverwaltung zu ermöglichen. 
-        Der Code dieses Programms wurde auf dieser Seite im Bereich Programmierprojekte hochgeladen.
-      </p>
+    <section id="process-automation">
+      <h2 class="lang-de">Prozessautomatisierung</h2>
+      <h2 class="lang-en">Process Automation Projects</h2>
+      
+      <div class="lang-de">
+        <p>
+          Entwicklung einer C++ Middleware zur Automatisierung eines Messgeräts (Agilent MassHunter GC/MS) 
+          und Integration in die Prozesssteuerungssoftware (SAMI, Beckman Coulter). 
+          Implementierung von UI-Automatisierung, TCP/IP-Kommunikation und XML-basierter Befehlsverarbeitung.
+        </p>
+      </div>
+      
+      <div class="lang-en">
+        <p>
+          Developed a C++ middleware to automate a measurement instrument (Agilent MassHunter GC/MS) 
+          and integrate it with process control software (SAMI, Beckman Coulter). 
+          Implemented UI automation, TCP/IP communication, and XML-based command handling.
+        </p>
+      </div>
+    
       <div class="project-list2">
-        <a href="https://github.com/Projekts-of-Sun/Process-automation/blob/main/Process%20automation.pdf" target="_blank" 
-           data-de="Präsentation des Prozessautomatisierungsprojekts" 
-           data-en="Presentation of process automation project">
-          Präsentation des Prozessautomatisierungsprojekts
+        <a href="https://github.com/Projekts-of-Sun/Process-automation/blob/main/Process%20automation.pdf" target="_blank">
+          <span class="lang-de">Präsentation des Automatisierungsprojekts (PDF)</span>
+          <span class="lang-en">Presentation of process automation project (PDF)</span>
         </a>
       </div>
     </section>
 
-    <!-- Electrical Design Section -->
-    <section id="electrical">
-      <h2 data-de="Elektrisches Design" data-en="Electrical Design">Elektrisches Design</h2>
+    <section id="electrical-design">
+      <h2 class="lang-de">Elektrodesign</h2>
+      <h2 class="lang-en">Electrical Design</h2>
       <div class="project-list3">
-        <a href="https://github.com/Projekts-of-Sun/Pulse-Signal-Generator" target="_blank" 
-           data-de="Pulssignal-Generator (KiCad 8.0.2)" 
-           data-en="Pulse-Signal-Generator (KiCad 8.0.2)">
-          Pulssignal-Generator (KiCad 8.0.2)
-        </a>
-        <a href="https://github.com/Projekts-of-Sun/D-sub-connectors" target="_blank" 
-           data-de="D-Sub-Stecker (KiCad 8.0.2)" 
-           data-en="D-sub-connectors (KiCad 8.0.2)">
-          D-Sub-Stecker (KiCad 8.0.2)
-        </a>
+        <a href="https://github.com/Projekts-of-Sun/Pulse-Signal-Generator" target="_blank">Pulse-Signal-Generator (KiCad 8.0.2)</a>
+        <a href="https://github.com/Projekts-of-Sun/D-sub-connectors" target="_blank">D-sub-connectors (KiCad 8.0.2)</a>
       </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
-      <h2 data-de="Fähigkeiten" data-en="Skills">Fähigkeiten</h2>
+      <h2 class="lang-de">Kenntnisse</h2>
+      <h2 class="lang-en">Skills</h2>
       <div class="skills">
-        <div class="skill">C++</div>
-        <div class="skill">C</div>
-        <div class="skill">COM Interface</div>
-        <div class="skill">TCP/IP</div>
-        <div class="skill">XML</div>
-        <div class="skill">MFC Framework</div>
-        <div class="skill">E3.Series</div>
-        <div class="skill">Eplan P8</div>
-        <div class="skill" data-de="Systemintegration" data-en="System Integration">Systemintegration</div>
-        <div class="skill">CS50</div>
-        <div class="skill">API</div>
-        <div class="skill">RPA</div>
-        <div class="skill">KiCad</div>
-        <div class="skill">Eclipse</div>
-        <div class="skill" data-de="Automatisierungssysteme" data-en="Automation Systems">Automatisierungssysteme</div>
+        <div class="skill">C++</div><div class="skill">C</div><div class="skill">COM Interface</div>
+        <div class="skill">TCP/IP</div><div class="skill">XML</div><div class="skill">MFC Framework</div>
+        <div class="skill">E3.Series</div><div class="skill">Eplan P8</div><div class="skill">System Integration</div>
+        <div class="skill">CS50</div><div class="skill">API</div><div class="skill">RPA</div>
+        <div class="skill">KiCad</div><div class="skill">Eclipse</div><div class="skill">Automation Systems</div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
-      <h2 data-de="Kontakt" data-en="Contact">Kontakt</h2>
+      <h2 class="lang-de">Kontakt</h2>
+      <h2 class="lang-en">Contact</h2>
       <div class="contact">
         <a href="mailto:po.alimohammad@gmail.com">✉️ po.alimohammad@gmail.com</a>
         <a href="https://github.com/Projekts-of-Sun" target="_blank">💻 GitHub</a>
@@ -373,46 +321,20 @@
   </main>
 
   <footer>
-    <p data-de="© 2025 Omid Alimohammad | Hamburg, Deutschland" 
-       data-en="© 2025 Omid Alimohammad | Hamburg, Germany">
-      © 2025 Omid Alimohammad | Hamburg, Deutschland
-    </p>
+    © 2025 Omid Alimohammad | Hamburg, Germany
   </footer>
 
   <script>
-    // Language switching function
-    function switchLanguage(lang) {
-      // Store language preference in localStorage
-      localStorage.setItem('preferredLanguage', lang);
-      
-      // Update active button
-      const buttons = document.querySelectorAll('.lang-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      // Update page content
-      const elements = document.querySelectorAll('[data-de][data-en]');
-      elements.forEach(element => {
-        if (element.tagName === 'A' && element.textContent) {
-          element.textContent = element.getAttribute(`data-${lang}`);
-        } else if (element.tagName === 'P' || element.tagName === 'H2') {
-          element.textContent = element.getAttribute(`data-${lang}`);
-        } else if (element.tagName === 'H1') {
-          element.textContent = element.getAttribute(`data-${lang}`);
-        }
-      });
-
-      // Update html lang attribute
-      document.documentElement.lang = lang;
+    // Funktion zum Wechseln der Sprache
+    function setLanguage(lang) {
+      document.documentElement.setAttribute('lang', lang); // Setzt lang="de" oder lang="en" im <html> Tag
+      localStorage.setItem('preferredLang', lang); // Speichert die Auswahl im Browser
     }
 
-    // Load saved language preference on page load
-    window.addEventListener('DOMContentLoaded', function() {
-      const savedLanguage = localStorage.getItem('preferredLanguage') || 'de';
-      const langButton = document.querySelector(`button[onclick="switchLanguage('${savedLanguage}')"]`);
-      if (langButton) {
-        langButton.click();
-      }
+    // Beim Laden der Seite: Gespeicherte Sprache abrufen (Standard: Deutsch)
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem('preferredLang') || 'de';
+      setLanguage(savedLang);
     });
   </script>
 </body>
