@@ -24,7 +24,7 @@
       text-decoration: underline;
     }
 
-    /* ==== Language Switcher (Optimiert für Sichtbarkeit) ==== */
+    /* ==== Language Switcher ==== */
     .lang-switcher {
       position: absolute;
       top: 20px;
@@ -33,16 +33,16 @@
     }
 
     .lang-btn {
-      background: #ffffff; /* Weißer Hintergrund für hohen Kontrast */
+      background: #ffffff;
       border: 2px solid #ffffff;
-      color: #007acc;      /* Blaue Schrift */
+      color: #007acc;
       padding: 8px 18px;
       cursor: pointer;
-      border-radius: 25px; /* Abgerundete Ecken */
+      border-radius: 25px;
       font-size: 0.9rem;
       transition: 0.3s;
       font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Schatten für bessere Sichtbarkeit */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       margin-left: 5px;
     }
 
@@ -52,7 +52,6 @@
       transform: translateY(-1px);
     }
 
-    /* Markierung für die aktive Sprache */
     html[lang="de"] .btn-de,
     html[lang="en"] .btn-en {
       background: #e1ecf4;
@@ -68,13 +67,14 @@
       position: relative;
     }
 
-    header img {
-      width: 120px;
-      height: 120px;
+    .profile-pic {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 1rem;
-      border: 3px solid white;
+      border: 4px solid white;
+      background-color: white;
     }
 
     header h1 {
@@ -107,15 +107,18 @@
       margin-bottom: 1.5rem;
       padding-bottom: 4px;
     }
-    #about ul {
-  padding-left: 20px;
-  margin-bottom: 1rem;
-}
-#about li {
-  margin-bottom: 5px;
-}
 
-    /* ==== Projekt-Kacheln (Buttons) ==== */
+    /* Styling für die neue "Über mich" Liste */
+    #about ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+    
+    #about li {
+      margin-bottom: 8px;
+    }
+
+    /* ==== Projekt-Kacheln ==== */
     .project-list a, .project-list2 a, .project-list3 a {
       display: block;
       background: #007acc;
@@ -133,15 +136,6 @@
       background: #005f99;
       transform: translateX(5px);
     }
-        /* ==== Photo ==== */
-
-    .profile-pic {
-    width: 190px;  /* Hier deine gewünschte Breite */
-    height: 190px; /* Hier deine gewünschte Höhe */
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ffffff; /* Optional: Ein weißer Rahmen für den "Lichtstrahl"-Look */
-}
 
     /* ==== Skills ==== */
     .skills {
@@ -160,7 +154,7 @@
     }
 
     .Resume-Container {
-      margin-top: 20px;
+      margin-top: 25px;
     }
 
     .Resume-Link {
@@ -176,13 +170,10 @@
 
     .Resume-Link:hover {
       background: #d0e5f8;
-      text-decoration: none;
     }
 
     /* ==== Sprach-Logik CSS ==== */
-    /* Verstecke englische Texte, wenn Deutsch aktiv ist */
     html[lang="de"] .lang-en { display: none !important; }
-    /* Verstecke deutsche Texte, wenn Englisch aktiv ist */
     html[lang="en"] .lang-de { display: none !important; }
 
     /* Footer */
@@ -209,12 +200,11 @@
       <button class="lang-btn btn-en" onclick="setLanguage('en')">English</button>
     </div>
     
-    <img src="lichtstrahl-high-resolution-logo.png" alt="Omid Alimohammad" class="profile-pic">
+    <img src="lichtstrahl-high-resolution-logo.png" alt="Lichtstrahl Logo" class="profile-pic">
     
-    <h1 class="lang-de"> Omid Alimohammad</h1>
-    <h1 class="lang-en"> Omid Alimohammad</h1>
-    <p class="lang-de"> M.Sc. Elektroingenieur | Softwareentwickler | Prozessautomatisierung</p>
-    <p class="lang-en"> M.Sc. Electrical Engineer | Software Developer | Process Automation</p>
+    <h1>Omid Alimohammad</h1>
+    <p class="lang-de">M.Sc. Elektroingenieur | Softwareentwickler | Prozessautomatisierung</p>
+    <p class="lang-en">M.Sc. Electrical Engineer | Software Developer | Process Automation</p>
   </header>
 
   <main>
@@ -222,49 +212,37 @@
       <h2 class="lang-de">Über mich</h2>
       <h2 class="lang-en">About Me</h2>
       
-     <section id="about">
-  <h2 class="lang-de">Über mich</h2>
-  <h2 class="lang-en">About Me</h2>
-  
-  <div class="lang-de">
-    <p>
-      Als <strong>M.Sc. Elektroingenieur</strong> schlage ich die Brücke zwischen Hardware-Design und intelligenter Software. 
-      Mein Fokus liegt auf der Entwicklung effizienter Automatisierungslösungen und Embedded Systems, wobei ich präzises Elektrodesign mit moderner Programmierung verbinde.
-    </p>
-    <p><strong>Kernkompetenzen:</strong></p>
-    <ul>
-      <li><strong>Softwareentwicklung:</strong> Expertisen in C++, Middleware-Entwicklung und API-Integration.</li>
-      <li><strong>Elektrodesign:</strong> Professionelle Projektierung mit E3.Series und Eplan P8.</li>
-      <li><strong>Prozessautomatisierung:</strong> Ganzheitliche Optimierung technischer Abläufe.</li>
-    </ul>
-    <p>
-      Meinen Masterabschluss habe ich an der <strong>Universität Rostock</strong> absolviert. Heute nutze ich diese fundierte Ausbildung, um komplexe technische Herausforderungen in innovative Lösungen zu verwandeln.
-    </p>
-  </div>
-  
-  <div class="lang-en">
-    <p>
-      As an <strong>M.Sc. Electrical Engineer</strong>, I bridge the gap between hardware design and intelligent software. 
-      My focus lies in developing efficient automation solutions and embedded systems, combining precise electrical design with modern programming.
-    </p>
-    <p><strong>Core Competencies:</strong></p>
-    <ul>
-      <li><strong>Software Development:</strong> Expertise in C++, middleware development, and API integration.</li>
-      <li><strong>Electrical Design:</strong> Professional engineering with E3.Series and Eplan P8.</li>
-      <li><strong>Process Automation:</strong> Holistic optimization of technical workflows.</li>
-    </ul>
-    <p>
-      I completed my Master’s degree at the <strong>University of Rostock</strong>. Today, I leverage this solid academic foundation to transform complex technical challenges into innovative solutions.
-    </p>
-  </div>
-
-  <div class="Resume-Container">
-      <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link">
-        <span class="lang-de">📄 Lebenslauf ansehen</span>
-        <span class="lang-en">📄 View My Resume</span>
-      </a>
-  </div>
-</section>
+      <div class="lang-de">
+        <p>
+          Als <strong>M.Sc. Elektroingenieur</strong> schlage ich die Brücke zwischen Hardware-Design und intelligenter Software. 
+          Mein Fokus liegt auf der Entwicklung effizienter <strong>Automatisierungslösungen und Embedded Systems</strong>, wobei ich präzises Elektrodesign mit moderner Programmierung verbinde.
+        </p>
+        <p><strong>Kernkompetenzen:</strong></p>
+        <ul>
+          <li><strong>Softwareentwicklung:</strong> Expertisen in C++, Middleware-Entwicklung und API-Integration.</li>
+          <li><strong>Elektrodesign:</strong> Professionelle Projektierung mit E3.Series und Eplan P8.</li>
+          <li><strong>Prozessautomatisierung:</strong> Ganzheitliche Optimierung technischer Abläufe.</li>
+        </ul>
+        <p>
+          Meinen Masterabschluss habe ich an der <strong>Universität Rostock</strong> absolviert. Heute nutze ich diese fundierte Ausbildung, um komplexe technische Herausforderungen in innovative Lösungen zu verwandeln.
+        </p>
+      </div>
+      
+      <div class="lang-en">
+        <p>
+          As an <strong>M.Sc. Electrical Engineer</strong>, I bridge the gap between hardware design and intelligent software. 
+          My focus lies in developing efficient <strong>automation solutions and embedded systems</strong>, combining precise electrical design with modern programming.
+        </p>
+        <p><strong>Core Competencies:</strong></p>
+        <ul>
+          <li><strong>Software Development:</strong> Expertise in C++, middleware development, and API integration.</li>
+          <li><strong>Electrical Design:</strong> Professional engineering with E3.Series and Eplan P8.</li>
+          <li><strong>Process Automation:</strong> Holistic optimization of technical workflows.</li>
+        </ul>
+        <p>
+          I completed my Master’s degree at the <strong>University of Rostock</strong>. Today, I leverage this solid academic foundation to transform complex technical challenges into innovative solutions.
+        </p>
+      </div>
 
       <div class="Resume-Container">
           <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link">
@@ -355,8 +333,8 @@
       <h2 class="lang-de">Kontakt</h2>
       <h2 class="lang-en">Contact</h2>
       <div class="contact">
-        <a href="mailto:po.alimohammad@gmail.com">✉️ po.alimohammad@gmail.com</a>
-        <a href="https://github.com/Projekts-of-Sun" target="_blank">💻 GitHub</a>
+        <p><a href="mailto:po.alimohammad@gmail.com">✉️ po.alimohammad@gmail.com</a></p>
+        <p><a href="https://github.com/Projekts-of-Sun" target="_blank">💻 GitHub</a></p>
       </div>
     </section>
   </main>
@@ -366,13 +344,11 @@
   </footer>
 
   <script>
-    // Funktion zum Wechseln der Sprache
     function setLanguage(lang) {
-      document.documentElement.setAttribute('lang', lang); // Setzt lang="de" oder lang="en" im <html> Tag
-      localStorage.setItem('preferredLang', lang); // Speichert die Auswahl im Browser
+      document.documentElement.setAttribute('lang', lang);
+      localStorage.setItem('preferredLang', lang);
     }
 
-    // Beim Laden der Seite: Gespeicherte Sprache abrufen (Standard: Deutsch)
     window.addEventListener('DOMContentLoaded', () => {
       const savedLang = localStorage.getItem('preferredLang') || 'de';
       setLanguage(savedLang);
