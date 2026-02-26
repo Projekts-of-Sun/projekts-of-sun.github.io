@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -108,6 +108,7 @@
       padding-bottom: 4px;
     }
 
+    /* Styling für die neue "Über mich" Liste */
     #about ul {
       padding-left: 20px;
       margin: 15px 0;
@@ -243,15 +244,15 @@
         </p>
       </div>
 
-      <div class="Resume-Container">
-        <a href="https://github.com/Projekts-of-Sun/Lebenslauf/blob/main/Lebenslauf.pdf" target="_blank" class="Resume-Link lang-de">
-            📄 Lebenslauf ansehen
-        </a>
-        
-        <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link lang-en">
-            📄 View My Resume
-        </a>
-      </div>
+     <div class="Resume-Container">
+    <a href="https://github.com/Projekts-of-Sun/Lebenslauf/blob/main/Lebenslauf.pdf" target="_blank" class="Resume-Link lang-de">
+        📄 Lebenslauf ansehen
+    </a>
+    
+    <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link lang-en">
+        📄 View My Resume
+    </a>
+</div>
     </section>
 
     <section id="programming-projects">
@@ -263,10 +264,83 @@
           <span class="lang-en">Middleware for process automation and system integration (C++)</span>
         </a>
         <a href="https://github.com/Projekts-of-Sun/voltage-dividers" target="_blank">voltage-dividers (MATLAB-Script)</a>
-        </div>
+        <a href="https://github.com/Projekts-of-Sun/Tideman" target="_blank">
+          <span class="lang-de">Implementierung des Tideman-Algorithmus (C)</span>
+          <span class="lang-en">Ranked-Choice Algorithm Implementation (C)</span>
+        </a>
+        <a href="https://github.com/Projekts-of-Sun/filter-less" target="_blank">
+          <span class="lang-de">BMP Bildbearbeitungs-Engine (C)</span>
+          <span class="lang-en">BMP Image Manipulation Engine (C)</span>
+        </a>
+        <a href="https://github.com/Projekts-of-Sun/Volume" target="_blank">
+          <span class="lang-de">WAV Datei Modifikator (C)</span>
+          <span class="lang-en">WAV File Modifier (C)</span>
+        </a>
+        <a href="https://github.com/Projekts-of-Sun/Readability" target="_blank">
+          <span class="lang-de">Automatisierter Lesbarkeits-Index (C)</span>
+          <span class="lang-en">Automated Readability Index Program (C)</span>
+        </a>
+      </div>
     </section>
 
-    </main>
+    <section id="process-automation">
+      <h2 class="lang-de">Prozessautomatisierung</h2>
+      <h2 class="lang-en">Process Automation Projects</h2>
+      
+      <div class="lang-de">
+        <p>
+          Entwicklung einer C++ Middleware zur Automatisierung eines Messgeräts (Agilent MassHunter GC/MS) 
+          und Integration in die Prozesssteuerungssoftware (SAMI, Beckman Coulter). 
+          Implementierung von UI-Automatisierung, TCP/IP-Kommunikation und XML-basierter Befehlsverarbeitung.
+        </p>
+      </div>
+      
+      <div class="lang-en">
+        <p>
+          Developed a C++ middleware to automate a measurement instrument (Agilent MassHunter GC/MS) 
+          and integrate it with process control software (SAMI, Beckman Coulter). 
+          Implemented UI automation, TCP/IP communication, and XML-based command handling.
+        </p>
+      </div>
+    
+      <div class="project-list2">
+        <a href="https://github.com/Projekts-of-Sun/Process-automation/blob/main/Process%20automation.pdf" target="_blank">
+          <span class="lang-de">Präsentation des Automatisierungsprojekts (PDF)</span>
+          <span class="lang-en">Presentation of process automation project (PDF)</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="electrical-design">
+      <h2 class="lang-de">Elektrodesign</h2>
+      <h2 class="lang-en">Electrical Design</h2>
+      <div class="project-list3">
+        <a href="https://github.com/Projekts-of-Sun/Pulse-Signal-Generator" target="_blank">Pulse-Signal-Generator (KiCad 8.0.2)</a>
+        <a href="https://github.com/Projekts-of-Sun/D-sub-connectors" target="_blank">D-sub-connectors (KiCad 8.0.2)</a>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="lang-de">Kenntnisse</h2>
+      <h2 class="lang-en">Skills</h2>
+      <div class="skills">
+        <div class="skill">C++</div><div class="skill">C</div><div class="skill">COM Interface</div>
+        <div class="skill">TCP/IP</div><div class="skill">XML</div><div class="skill">MFC Framework</div>
+        <div class="skill">E3.Series</div><div class="skill">Eplan P8</div><div class="skill">System Integration</div>
+        <div class="skill">CS50</div><div class="skill">API</div><div class="skill">RPA</div>
+        <div class="skill">KiCad</div><div class="skill">Eclipse</div><div class="skill">Automation Systems</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="lang-de">Kontakt</h2>
+      <h2 class="lang-en">Contact</h2>
+      <div class="contact">
+        <p><a href="mailto:po.alimohammad@gmail.com">✉️ po.alimohammad@gmail.com</a></p>
+        <p><a href="https://github.com/Projekts-of-Sun" target="_blank">💻 GitHub</a></p>
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 Omid Alimohammad | Hamburg, Germany
@@ -279,7 +353,6 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      // Standardmäßig wird nun 'en' (Englisch) gewählt
       const savedLang = localStorage.getItem('preferredLang') || 'en';
       setLanguage(savedLang);
     });
