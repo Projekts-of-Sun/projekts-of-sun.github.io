@@ -126,6 +126,15 @@
       background: #005f99;
       transform: translateX(5px);
     }
+        /* ==== Photo ==== */
+
+    .profile-pic {
+    width: 180px;  /* Hier deine gewünschte Breite */
+    height: 180px; /* Hier deine gewünschte Höhe */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff; /* Optional: Ein weißer Rahmen für den "Lichtstrahl"-Look */
+}
 
     /* ==== Skills ==== */
     .skills {
@@ -193,7 +202,7 @@
       <button class="lang-btn btn-en" onclick="setLanguage('en')">English</button>
     </div>
     
-    <img src="lichtstrahl-high-resolution-logo.png" alt="Omid Alimohammad" />
+    <img src="lichtstrahl-high-resolution-logo.png" alt="Omid Alimohammad" class="profile-pic">
     
     <h1 class="lang-de"> Lichtstrahl</h1>
     <h1 class="lang-en"> beam of light</h1>
