@@ -245,14 +245,14 @@
       </div>
 
      <div class="Resume-Container">
-    <a href="https://github.com/Projekts-of-Sun/Lebenslauf/blob/main/Lebenslauf.pdf" target="_blank" class="Resume-Link lang-de">
-        📄 Lebenslauf ansehen
-    </a>
-    
-    <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link lang-en">
-        📄 View My Resume
-    </a>
-</div>
+        <a href="https://github.com/Projekts-of-Sun/Lebenslauf/blob/main/Lebenslauf.pdf" target="_blank" class="Resume-Link lang-de">
+            📄 Lebenslauf ansehen
+        </a>
+        
+        <a href="https://github.com/Projekts-of-Sun/CV/blob/main/CV.pdf" target="_blank" class="Resume-Link lang-en">
+            📄 View My Resume
+        </a>
+    </div>
     </section>
 
     <section id="programming-projects">
@@ -353,6 +353,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      // Standardmäßig Englisch ('en'), falls keine Einstellung gespeichert ist
       const savedLang = localStorage.getItem('preferredLang') || 'en';
       setLanguage(savedLang);
     });
